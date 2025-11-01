@@ -8,10 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body class="dark-mode">
 
@@ -44,13 +42,13 @@
 
     <footer class="footer">
         <div class="total-container">
-            <div>
-                <span class="total-label">Total Amount:</span>
-                <span id="total-amount" class="total-amount">₹ 0.00</span>
-            </div>
             <div id="crate-count-container">
                 <span class="total-label">Crates:</span>
                 <span id="total-crates" class="total-amount" style="color: var(--amul-blue);">0</span>
+            </div>
+            <div>
+                <span class="total-label">Total Amount:</span>
+                <span id="total-amount" class="total-amount">₹ 0.00</span>
             </div>
         </div>
         <div class="action-buttons">
@@ -138,11 +136,14 @@
                 <div class="setting-section">
                     <h3>Manage Products</h3>
                     <div id="manage-product-list"></div>
-                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Add New Product</h4>
                     <form id="add-product-form">
+                        <label for="product-name">Product Name:</label>
                         <input type="text" id="product-name" placeholder="Product Name" required>
+                        <label for="product-size">Size:</label>
                         <input type="text" id="product-size" placeholder="Size (e.g., 500ml)" required>
+                        <label for="product-price">Price:</label>
                         <input type="number" id="product-price" placeholder="Price" step="0.01" required>
+                        <label for="product-category">Category:</label>
                         <input type="text" id="product-category" placeholder="Category" required>
                         <div class="container-type-selector">
                             <span>Container:</span>
@@ -156,7 +157,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="edit-product-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -166,15 +167,15 @@
             <div class="modal-body">
                 <form id="edit-product-form">
                     <input type="hidden" id="edit-product-id">
-                    <label>Name:</label>
+                    <label for="edit-product-name">Name:</label>
                     <input type="text" id="edit-product-name" required>
-                    <label>Size:</label>
+                    <label for="edit-product-size">Size:</label>
                     <input type="text" id="edit-product-size" required>
-                    <label>Price:</label>
+                    <label for="edit-product-price">Price:</label>
                     <input type="number" id="edit-product-price" step="0.01" required>
-                    <label>Category:</label>
+                    <label for="edit-product-category">Category:</label>
                     <input type="text" id="edit-product-category" required>
-                     <div class="container-type-selector" id="edit-container-type-selector">
+                    <div class="container-type-selector">
                         <span>Container:</span>
                         <label><input type="radio" name="edit-container-type" value="crate"> Crate</label>
                         <label><input type="radio" name="edit-container-type" value="box"> Box</label>
@@ -185,7 +186,6 @@
             </div>
         </div>
     </div>
-
 
     <div id="toast" class="toast">Action complete!</div>
 
