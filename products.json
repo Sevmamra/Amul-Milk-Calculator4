@@ -48,6 +48,14 @@
     "container": "crate"
   },
   {
+    "id": "nishu",
+    "name": "Nishit C",
+    "size": "70kg",
+    "price": 10.00,
+    "category": "navi",
+    "container": "crate"
+  },
+  {
     "id": "chaas_masala",
     "name": "Pro. Masala Chaas",
     "size": "280ml",
